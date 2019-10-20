@@ -1,8 +1,6 @@
 FROM python:3.8.0-alpine3.10
 LABEL maintainer "Manaki <manakinaoe@gmail.com>"
 
-WORKDIR /usr/src/app
-
 RUN set -xe && \
     apk add --no-cache --update \
         alpine-sdk \
