@@ -19,8 +19,9 @@ docker build -t oci-cli .
 > Run in the repository
 >
 > ```bash
-> docker run --rm --mount type=bind,source=${PWD}/.oci,target=/root/.oci > -it oci-cli:latest 《oci cli command》
+> docker run --rm --mount type=bind,source=${PWD}/.oci,target=/root/.oci > -it oci-cli:latest 《OCI CLI Command》
 >```
+>
 > [OCI CLI Command Reference](https://docs.cloud.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/)
 >
 
@@ -33,6 +34,7 @@ docker build -t oci-cli .
 > ```bash
 > docker run --rm --mount type=bind,source=${PWD}/.oci,target=/root/.oci > -it oci-cli:latest setup config
 > ```
+>
 >　Answer interactively after execution
 >
 
@@ -43,13 +45,14 @@ docker build -t oci-cli .
 > ### alias
 >
 > Replace repository path
+>
 > ```bash:bash_profile
-> alias oci='docker run --rm --mount type=bind,source=《Repository path》/.oci,target=/root/.oci -it oci-cli:latest "$@"'
+> alias oci-cli='docker run --rm --mount type=bind,source=《Repository path》/.oci,target=/root/.oci -it oci-cli:latest "$@"'
 > ```
 >
 > Use Command
 >
 > ```bash
-> $ oci --version
+> $ oci-cli --version
 > 2.6.9
 > ```
