@@ -46,7 +46,7 @@ docker build -t oci-cli .
 >
 > Replace repository path
 >
-> ```bash:bash_profile
+> ```bash:bashrc
 > alias oci-cli='docker run --rm --mount type=bind,source=《Repository path》/.oci,target=/root/.oci -it oci-cli:latest "$@"'
 > ```
 >
