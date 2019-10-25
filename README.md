@@ -15,11 +15,11 @@ docker build -t oci-cli .
 ### How to use
 
 > **※Note**
-> 
+>
 > Run in the repository
 >
 > ```bash
-> docker run --rm --mount type=bind,source=${PWD}/.oci,target=/root/.oci > -it oci-cli:latest 《OCI CLI Command》
+> docker run --rm -v ${PWD}/.oci:/root/.oci -it oci-cli:latest 《OCI CLI Command》
 >```
 >
 > [OCI CLI Command Reference](https://docs.cloud.oracle.com/iaas/tools/oci-cli/latest/oci_cli_docs/)
@@ -30,13 +30,28 @@ docker build -t oci-cli .
 ### Example
 
 > **Create config & Create API key**
-> 
+>
 > ```bash
-> docker run --rm --mount type=bind,source=${PWD}/.oci,target=/root/.oci > -it oci-cli:latest setup config
+> docker run --rm -v ${PWD}/.oci:/root/.oci -it oci-cli:latest setup config
 > ```
 >
 >　Answer interactively after execution
 >
+
+---
+
+> **Setup oci-cli-rc**
+>
+> ```bash
+> docker run --rm -v ${PWD}/.oci:/root/.oci -it oci-cli:latest setup oci-cli-rc
+> ```
+>
+>　Edit .oci/oci_cli_rc
+>
+> ```bash
+> [DEFAULT]
+> compartment-id = <Compartment OCID>
+> ```
 
 ---
 
